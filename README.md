@@ -5,19 +5,25 @@ Entry point of this app is app.ts file, and main method is routes requiring expr
 * yarn dev
 
 # All routes listed out in routes.ts file
-# app.get("/healthCheck", (req: Request, res: Response) => res.sendStatus(200))
+```
+app.get("/healthCheck", (req: Request, res: Response) => res.sendStatus(200))
+```
 * this route is just for checking health of the server
-
-# app.post("/api/formResponses", validateResources(createFormSchema), createFormHandler);
+```
+app.post("/api/formResponses", validateResources(createFormSchema), createFormHandler);
+```
 * this route is for submitting form response. required data object as a input
-
-# app.get("/api/getExperiments", getExperimentHandler);
+```
+ app.get("/api/getExperiments", getExperimentHandler);
+```
 * This route is for getting experiments
-
-# app.get("/api/getQuestions/:experimentId", [validateResources(readQuestionsSchema)], getQuestionsHandler);
+```
+ app.get("/api/getQuestions/:experimentId", [validateResources(readQuestionsSchema)], getQuestionsHandler);
+```
 * This route is for getting questions of experiment, so it's required experimentId as params
-
-# app.post("/api/createExperiment",validateResources(createExperimentSchema) , createExperimentHandler);
+```
+app.post("/api/createExperiment",validateResources(createExperimentSchema) , createExperimentHandler);
+```
 * This route is for creating new experiment, So it's take experiment data as a object:-
 ```
 {
@@ -37,8 +43,9 @@ Entry point of this app is app.ts file, and main method is routes requiring expr
 }
 ```
 
-
+```
 # app.put("/api/disableExperiment/:experimentId", [validateResources(readQuestionsSchema)], disableExperimentHandler);
+```
 
 This route is for disable any experiment, so it's need a experiment id as a parameter.
 
