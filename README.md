@@ -25,6 +25,18 @@ app.post("/api/formResponses", validateResources(createFormSchema), createFormHa
 app.post("/api/createExperiment",validateResources(createExperimentSchema) , createExperimentHandler);
 ```
 * This route is for creating new experiment, So it's take experiment data as a object:-
+* Data Structure
+```
+body: {
+        name: string;
+        isActive: boolean;
+        questions: {
+            options?: string[] | undefined;
+            type: "Single" | "Multi" | "Optional";
+            question: string;
+        }[];
+    };
+ ```
 ```
 {
     "name": "another Experiment",
